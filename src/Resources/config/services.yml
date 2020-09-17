@@ -3,6 +3,12 @@ parameters:
   cloudflare.zone_id: "%env(resolve:CLOUDFLARE_ZONE_ID)%"
 
 services:
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  Superrb\KunstmaanCdnBundle\:
+    resource: "../src/*"
+    exclude: "../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}"
+
   Superrb\KunstmaanCdnBundle\Provider\CloudflareProvider:
     arguments:
       $zoneId: "%cloudflare.zone_id%"
