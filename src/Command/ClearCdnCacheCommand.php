@@ -23,6 +23,12 @@ class ClearCdnCacheCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output): void
     {
-        $this->service->clearCache();
+        $msg    = 'Clear '.$this->service->getProviderName().' cache: ';
+        $status = 'FAIL';
+        if ($this->service->clearCache()) {
+            $status = 'OK';
+        }
+
+        $output->writeln($msg.$status);
     }
 }

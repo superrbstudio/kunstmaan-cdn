@@ -24,6 +24,11 @@ class ClearCdnCacheService
         $this->provider = $container->get(self::PROVIDERS[$provider]);
     }
 
+    public function getProviderName()
+    {
+        return $this->provider->getName();
+    }
+
     public function clearCache(?array $files = [])
     {
         return $this->provider->clearCache($files);

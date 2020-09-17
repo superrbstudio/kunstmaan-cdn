@@ -23,6 +23,11 @@ class CloudflareProvider implements ProviderInterface
         $this->zoneId     = $zoneId;
     }
 
+    public function getName(): string
+    {
+        return 'Cloudflare';
+    }
+
     public function clearCache(?array $files = []): bool
     {
         if (empty($files)) {
