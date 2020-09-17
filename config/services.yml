@@ -19,5 +19,6 @@ services:
       $provider: "%kunstmaan_cdn.provider%"
 
   Superrb\KunstmaanCdnBundle\Provider\CloudflareProvider:
+    public: true
     arguments:
       $zoneId: "%cloudflare.zone_id%"
