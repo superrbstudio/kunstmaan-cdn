@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "symfony/symfony": "^4.4",
+    "symfony/console": "^4.4",
     "gpenverne/cloudflare-bundle": "^2.2"
   },
   "autoload": {
