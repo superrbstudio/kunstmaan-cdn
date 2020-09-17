@@ -2,6 +2,7 @@
 
 namespace Superrb\KunstmaanCdnBundle\Command;
 
+use Psr\Log\LoggerInterface;
 use Superrb\KunstmaanCdnBundle\Service\ClearCdnCacheService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -14,9 +15,15 @@ class ClearCdnCacheCommand extends Command
      */
     protected $service;
 
-    public function __construct(ClearCdnCacheService $service)
+    /**
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    public function __construct(ClearCdnCacheService $service, LoggerInterface $logger)
     {
         $this->service = $service;
+        $this->logger  = $logger;
 
         parent::__construct('cdn:cache:clear');
     }
@@ -25,8 +32,12 @@ class ClearCdnCacheCommand extends Command
     {
         $msg    = 'Clear '.$this->service->getProviderName().' cache: ';
         $status = 'FAIL';
-        if ($this->service->clearCache()) {
-            $status = 'OK';
+        try {
+            if ($this->service->clearCache()) {
+                $status = 'OK';
+            }
+        } catch (\Throwable $th) {
+            $this->logger->critical($th->getMessage());
         }
 
         $output->writeln($msg.$status);
