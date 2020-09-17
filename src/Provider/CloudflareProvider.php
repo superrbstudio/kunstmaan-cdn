@@ -15,17 +15,11 @@ class CloudflareProvider implements ProviderInterface
     /**
      * @var string
      */
-    protected $apiKey;
-
-    /**
-     * @var string
-     */
     protected $zoneId;
 
     public function __construct(CloudflareService $cloudflare, string $zoneId)
     {
         $this->cloudflare = $cloudflare;
-        $this->apiKey     = $apiKey;
         $this->zoneId     = $zoneId;
     }
 
