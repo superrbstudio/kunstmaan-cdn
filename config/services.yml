@@ -14,6 +14,10 @@ services:
     resource: "../src/*"
     exclude: "../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}"
 
+  Superrb\KunstmaanCdnBundle\Provider\ClearCdnCacheService:
+    arguments:
+      $provider: "%kunstmaan_cdn.provider%"
+
   Superrb\KunstmaanCdnBundle\Provider\CloudflareProvider:
     arguments:
       $zoneId: "%cloudflare.zone_id%"
