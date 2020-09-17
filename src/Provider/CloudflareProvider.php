@@ -22,7 +22,7 @@ class CloudflareProvider implements ProviderInterface
      */
     protected $zoneId;
 
-    public function __construct(CloudflareService $cloudflare, string $apiKey, string $zoneId)
+    public function __construct(CloudflareService $cloudflare, string $zoneId)
     {
         $this->cloudflare = $cloudflare;
         $this->apiKey     = $apiKey;
