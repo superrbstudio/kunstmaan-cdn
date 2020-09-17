@@ -1,6 +1,6 @@
 <?php
 
-namespace Superrb\KunstmaanAddonsBundle\DependencyInjection;
+namespace Superrb\KunstmaanCdnBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

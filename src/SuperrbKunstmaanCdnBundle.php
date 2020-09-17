@@ -1,8 +1,8 @@
 <?php
 
-namespace Superrb\KunstmaanAddonsBundle;
+namespace Superrb\KunstmaanCdnBundle;
 
-use Superrb\KunstmaanAddonsBundle\DependencyInjection\SuperrbKunstmaanCdnExtension;
+use Superrb\KunstmaanCdnBundle\DependencyInjection\SuperrbKunstmaanCdnExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
