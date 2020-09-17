@@ -1,0 +1,26 @@
+{
+  "name": "superrb/kunstmaan-cdn",
+  "description": "A selection of CDN integrations for Kunstmaan Bundles",
+  "keywords": [
+    "cms"
+  ],
+  "homepage": "https://github.com/superrbstudio/kunstmaan-cdn",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Superrb Team",
+      "email": "tech@superrb.com"
+    }
+  ],
+  "require": {
+    "symfony/symfony": "^4.4",
+    "gpenverne/cloudflare-bundle": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Superrb\\KunstmaanCdnBundle\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -1,0 +1,8 @@
+parameters:
+  cloudflare.api_token: "%env(resolve:CLOUDFLARE_API_TOKEN)%"
+  cloudflare.zone_id: "%env(resolve:CLOUDFLARE_ZONE_ID)%"
+
+services:
+  Superrb\KunstmaanCdnBundle\Provider\CloudflareProvider:
+    arguments:
+      $zoneId: "%cloudflare.zone_id%"
