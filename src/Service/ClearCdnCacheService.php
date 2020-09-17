@@ -2,8 +2,8 @@
 
 namespace Superrb\KunstmaanCdnBundle\Service;
 
+use Psr\Container\ContainerInterface;
 use Superrb\KunstmaanCdnBundle\Provider\CloudflareProvider;
-use Symfony\Component\DependencyInjection\Container;
 
 class ClearCdnCacheService
 {
@@ -19,7 +19,7 @@ class ClearCdnCacheService
      */
     protected $provider;
 
-    public function __construct(Container $container, string $provider)
+    public function __construct(ContainerInterface $container, string $provider)
     {
         $this->provider = $container->get(self::PROVIDERS[$provider]);
     }
