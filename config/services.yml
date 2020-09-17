@@ -14,7 +14,7 @@ services:
     resource: "../src/*"
     exclude: "../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}"
 
-  Superrb\KunstmaanCdnBundle\Provider\ClearCdnCacheService:
+  Superrb\KunstmaanCdnBundle\Service\ClearCdnCacheService:
     arguments:
       $provider: "%kunstmaan_cdn.provider%"
 
