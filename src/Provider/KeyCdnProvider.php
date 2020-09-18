@@ -37,7 +37,7 @@ class KeyCdnProvider implements ProviderInterface
     protected function getAuth(): array
     {
         return [
-            'auth' => [$this->apiKey.':', ''],
+            'auth' => [$this->apiKey, ''],
         ];
     }
 
