@@ -32,12 +32,8 @@ class ClearCdnCacheCommand extends Command
     {
         $msg    = 'Clear '.$this->service->getProviderName().' cache: ';
         $status = 'FAIL';
-        try {
-            if ($this->service->clearCache()) {
-                $status = 'OK';
-            }
-        } catch (\Throwable $th) {
-            $this->logger->critical($th->getMessage());
+        if ($this->service->clearCache()) {
+            $status = 'OK';
         }
 
         $output->writeln($msg.$status);
