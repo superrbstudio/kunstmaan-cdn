@@ -36,9 +36,7 @@ class KeyCdnProvider implements ProviderInterface
 
     protected function getAuth(): array
     {
-        return [
-            'auth' => [$this->apiKey, ''],
-        ];
+        return [$this->apiKey, ''];
     }
 
     public function clearCache(?array $files = []): bool
