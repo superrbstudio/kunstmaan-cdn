@@ -56,7 +56,9 @@ class KeyCdnProvider implements ProviderInterface
             ],
         ]);
 
-        dump(json_decode((string) $response->getBody()));
+        $body = json_decode((string) $response->getBody());
+
+        return 'success' === $body->status;
     }
 
     public function clearCacheFull(): bool
@@ -65,6 +67,9 @@ class KeyCdnProvider implements ProviderInterface
         $response = $this->client->get("https://api.keycdn.com/zones/purge/$zoneId.json", [
             'auth' => $this->getAuth(),
         ]);
-        dump(json_decode((string) $response->getBody()));
+
+        $body = json_decode((string) $response->getBody());
+
+        return 'success' === $body->status;
     }
 }
