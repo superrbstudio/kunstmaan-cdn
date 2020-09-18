@@ -31,6 +31,11 @@ class KeyCdnProvider implements ProviderInterface
         $this->baseUrl = $baseUrl;
     }
 
+    public function getName(): string
+    {
+        return 'KeyCDN';
+    }
+
     public function clearCache(?array $files = []): bool
     {
         if (empty($files)) {
