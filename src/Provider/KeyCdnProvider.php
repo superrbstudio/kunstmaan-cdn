@@ -23,7 +23,7 @@ class KeyCdnProvider implements ProviderInterface
 
     public function __construct(string $apiKey, string $zoneId, string $baseUrl)
     {
-        $this->client = new Client();
+        $this->client  = new Client();
         $this->apiKey  = $apiKey;
         $this->zoneId  = $zoneId;
         $this->baseUrl = $baseUrl;
@@ -34,10 +34,11 @@ class KeyCdnProvider implements ProviderInterface
         return 'KeyCDN';
     }
 
-    protected function getAuth(): array {
+    protected function getAuth(): array
+    {
         return [
             'auth' => [$this->apiKey.':', ''],
-        ]
+        ];
     }
 
     public function clearCache(?array $files = []): bool
@@ -47,6 +48,7 @@ class KeyCdnProvider implements ProviderInterface
         }
 
         $zoneId   = $this->zoneId;
+        $baseUrl  = $this->baseUrl;
         $response = $this->client->delete("https://api.keycdn.com/zones/purgeurl/$zoneId.json", [
             'auth' => $this->getAuth(),
             'json' => [
@@ -63,7 +65,7 @@ class KeyCdnProvider implements ProviderInterface
     {
         $zoneId   = $this->zoneId;
         $response = $this->client->get("https://api.keycdn.com/zones/purge/$zoneId.json", [
-            'auth' => $this->getAuth();
+            'auth' => $this->getAuth(),
         ]);
         dump($response);
     }
