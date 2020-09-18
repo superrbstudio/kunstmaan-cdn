@@ -4,6 +4,7 @@ namespace Superrb\KunstmaanCdnBundle\Service;
 
 use Psr\Container\ContainerInterface;
 use Superrb\KunstmaanCdnBundle\Provider\CloudflareProvider;
+use Superrb\KunstmaanCdnBundle\Provider\KeyCdnProvider;
 
 class ClearCdnCacheService
 {
@@ -12,6 +13,7 @@ class ClearCdnCacheService
      */
     const PROVIDERS = [
         'cloudflare' => CloudflareProvider::class,
+        'keycdn'     => KeyCdnProvider::class,
     ];
 
     /**

@@ -1,6 +1,8 @@
 parameters:
   cloudflare.api_token: "%env(resolve:CLOUDFLARE_API_TOKEN)%"
   cloudflare.zone_id: "%env(resolve:CLOUDFLARE_ZONE_ID)%"
+  keycdn.api_key: "%env(resolve:KEYCDN_API_KEY)%"
+  keycdn.zone_id: "%env(resolve:KEYCDN_ZONE_ID)%"
 
 services:
   # default configuration for services in *this* file
@@ -23,3 +25,11 @@ services:
     public: true
     arguments:
       $zoneId: "%cloudflare.zone_id%"
+
+  Superrb\KunstmaanCdnBundle\Provider\KeyCdnProvider:
+    lazy: true
+    public: true
+    arguments:
+      $apiKey: "%keycdn.api_key%"
+      $zoneId: "%keycdn.zone_id%"
+      $baseUrl: "%keycdn.base_url%"

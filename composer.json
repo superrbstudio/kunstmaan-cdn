@@ -14,7 +14,8 @@
   ],
   "require": {
     "symfony/console": "^4.4",
-    "gpenverne/cloudflare-bundle": "^2.2"
+    "gpenverne/cloudflare-bundle": "^2.2",
+    "guzzlehttp/guzzle": "^6.4"
   },
   "autoload": {
     "psr-4": {
