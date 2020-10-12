@@ -3,6 +3,7 @@ parameters:
   cloudflare.zone_id: "%env(resolve:CLOUDFLARE_ZONE_ID)%"
   keycdn.api_key: "%env(resolve:KEYCDN_API_KEY)%"
   keycdn.zone_id: "%env(resolve:KEYCDN_ZONE_ID)%"
+  kunstmaan_cdn.provider: "%env(resolve:CDN_PROVIDER)%"
 
 services:
   # default configuration for services in *this* file
